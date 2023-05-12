@@ -1,8 +1,11 @@
 'use strict'
 
+require('dotenv').config()
+
 var jwt = require('jwt-simple');
 var moment = require('moment');
-var secret = 'diegoararca';
+
+var secret = process.env.SECRET;
 
 exports.auth = function(req,res,next){
 
@@ -10,23 +13,18 @@ exports.auth = function(req,res,next){
         return res.status(403).send({message: 'NoHeadersError'});
     }
 
-    var token = req.headers.authorization.replace(/['"]+/g,'');
+    var token = req.headers.authorization;
 
-    var segment = token.split('.');
-
-    if(segment.length != 3){
-        return res.status(403).send({message: 'InvalidToken'});
-    }else{
-        try {
-            var payload = jwt.decode(token,secret);
-            
-            if(payload.exp <= moment().unix()){
-                return res.status(403).send({message: 'TokenExpirado'});
-            }
-
-        } catch (error) {
-            return res.status(403).send({message: 'InvalidToken'});
+    try {
+        var payload = jwt.decode(token,secret);
+        console.log(payload);
+        
+        if(payload.exp <= moment().unix()){
+            return res.status(403).send({message: 'TokenExpirado'});
         }
+
+    } catch (error) {
+        return res.status(403).send({message: 'InvalidToken'});
     }
 
     req.user = payload;

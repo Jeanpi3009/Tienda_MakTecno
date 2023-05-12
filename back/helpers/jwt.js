@@ -1,8 +1,11 @@
 'use strict'
 
+require('dotenv').config()
+
 var jwt = require('jwt-simple');
 var moment = require('moment');
-var secret = 'nicostark';
+
+const _SECRET = process.env.SECRET
 
 exports.createToken = function(user){
     var payload = {
@@ -15,5 +18,5 @@ exports.createToken = function(user){
         exp: moment().add(7,'days').unix()
     }
 
-    return jwt.encode(payload,secret);
+    return jwt.encode(payload,_SECRET);
 }
