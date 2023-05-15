@@ -23,30 +23,40 @@ export class CreateProductoComponent implements OnInit {
   public config : any = {};
   public token;
   public load_btn = false;
-  public config_global : any = {};
+  public config_global: any = {};
 
   constructor(
     private _productoService : ProductoService,
     private _adminService : AdminService,
-    private _router:Router
+    private _router: Router
   ) { 
     this.config = {
       height: 500
     }
+    console.log("Token (Posiblemente null)", this._adminService.getToken());
     this.token = this._adminService.getToken();
-    this._adminService.obtener_config_publico().subscribe(
-      response=>{
-        this.config_global = response.data;
-        console.log(this.config_global);
+    console.log("<--Pasa la peticcion-->", )
+    // this._adminService.obtener_config_publico().subscribe(
+    //   response=>{
+    //     this.config_global = response.data;
+    //     console.log("Captura data >> ", this.config_global);
         
-      }
-    )
+    //   }
+    // )
   }
 
   ngOnInit(): void {
+    console.log("Inicia!")
+    this._adminService.obtener_config_publico().subscribe( response => {
+      this.config_global = response.data;
+      console.log("Captura data >> ", this.config_global);
+    })
+
   }
 
   registro(registroForm){
+    console.log(registroForm);
+    
     if(registroForm.valid){
       if(this.file == undefined){
         iziToast.show({

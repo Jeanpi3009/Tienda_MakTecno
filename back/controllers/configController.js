@@ -86,6 +86,7 @@ const obtener_logo = async function(req,res){
 
 const obtener_config_publico  = async function(req,res){
     let reg = await Config.findById({_id:"60aac901eadf8212e476d2da"});
+    console.log("Me trae", reg)
     res.status(200).send({data:reg});
 }
 

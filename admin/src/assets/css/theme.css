@@ -41,7 +41,7 @@
   --gray-dark: #424551;
   --primary: #007bff;
   --secondary: #e5e8ed;
-  --success: #03cea4;
+  --success: #19e6ff;
   --info: #5a87fc;
   --warning: #f89828;
   --danger: #ff4242;
@@ -2369,7 +2369,7 @@ textarea.form-control {
   width: 100%;
   margin-top: .25rem;
   font-size: 80%;
-  color: #03cea4
+  color: #19e6ff
 }
 
 .valid-tooltip {
@@ -2397,9 +2397,9 @@ textarea.form-control {
 
 .was-validated .form-control:valid,
 .form-control.is-valid {
-  border-color: #03cea4;
+  border-color: #19e6ff;
   padding-right: calc(1.5em + 1.25rem);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2303cea4' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2319e6ff' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right calc(.375em + .3125rem) center;
   background-size: calc(.75em + .625rem) calc(.75em + .625rem)
@@ -2407,7 +2407,7 @@ textarea.form-control {
 
 .was-validated .form-control:valid:focus,
 .form-control.is-valid:focus {
-  border-color: #03cea4;
+  border-color: #19e6ff;
   box-shadow: 0 0 0 0 rgba(3, 206, 164, 0.25)
 }
 
@@ -2419,20 +2419,20 @@ textarea.form-control.is-valid {
 
 .was-validated .custom-select:valid,
 .custom-select.is-valid {
-  border-color: #03cea4;
+  border-color: #19e6ff;
   padding-right: calc(.75em + 2.9375rem);
-  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23424551' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 1rem center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2303cea4' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") #fff no-repeat center right 2rem/calc(.75em + .625rem) calc(.75em + .625rem)
+  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23424551' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 1rem center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2319e6ff' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") #fff no-repeat center right 2rem/calc(.75em + .625rem) calc(.75em + .625rem)
 }
 
 .was-validated .custom-select:valid:focus,
 .custom-select.is-valid:focus {
-  border-color: #03cea4;
+  border-color: #19e6ff;
   box-shadow: 0 0 0 0 rgba(3, 206, 164, 0.25)
 }
 
 .was-validated .form-check-input:valid~.form-check-label,
 .form-check-input.is-valid~.form-check-label {
-  color: #03cea4
+  color: #19e6ff
 }
 
 .was-validated .form-check-input:valid~.valid-feedback,
@@ -2444,12 +2444,12 @@ textarea.form-control.is-valid {
 
 .was-validated .custom-control-input:valid~.custom-control-label,
 .custom-control-input.is-valid~.custom-control-label {
-  color: #03cea4
+  color: #19e6ff
 }
 
 .was-validated .custom-control-input:valid~.custom-control-label::before,
 .custom-control-input.is-valid~.custom-control-label::before {
-  border-color: #03cea4
+  border-color: #19e6ff
 }
 
 .was-validated .custom-control-input:valid:checked~.custom-control-label::before,
@@ -2465,17 +2465,17 @@ textarea.form-control.is-valid {
 
 .was-validated .custom-control-input:valid:focus:not(:checked)~.custom-control-label::before,
 .custom-control-input.is-valid:focus:not(:checked)~.custom-control-label::before {
-  border-color: #03cea4
+  border-color: #19e6ff
 }
 
 .was-validated .custom-file-input:valid~.custom-file-label,
 .custom-file-input.is-valid~.custom-file-label {
-  border-color: #03cea4
+  border-color: #19e6ff
 }
 
 .was-validated .custom-file-input:valid:focus~.custom-file-label,
 .custom-file-input.is-valid:focus~.custom-file-label {
-  border-color: #03cea4;
+  border-color: #19e6ff;
   box-shadow: 0 0 0 0 rgba(3, 206, 164, 0.25)
 }
 
@@ -2801,8 +2801,8 @@ fieldset:disabled a.btn {
 
 .btn-success {
   color: #fff;
-  background-color: #03cea4;
-  border-color: #03cea4;
+  background-color: #19e6ff;
+  border-color: #19e6ff;
   box-shadow: none
 }
 
@@ -2823,8 +2823,8 @@ fieldset:disabled a.btn {
 .btn-success.disabled,
 .btn-success:disabled {
   color: #fff;
-  background-color: #03cea4;
-  border-color: #03cea4
+  background-color: #19e6ff;
+  border-color: #19e6ff
 }
 
 .btn-success:not(:disabled):not(.disabled):active,
@@ -3124,14 +3124,14 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-success {
-  color: #03cea4;
-  border-color: #03cea4
+  color: #19e6ff;
+  border-color: #19e6ff
 }
 
 .btn-outline-success:hover {
   color: #fff;
-  background-color: #03cea4;
-  border-color: #03cea4
+  background-color: #19e6ff;
+  border-color: #19e6ff
 }
 
 .btn-outline-success:focus,
@@ -3141,7 +3141,7 @@ fieldset:disabled a.btn {
 
 .btn-outline-success.disabled,
 .btn-outline-success:disabled {
-  color: #03cea4;
+  color: #19e6ff;
   background-color: transparent
 }
 
@@ -3149,8 +3149,8 @@ fieldset:disabled a.btn {
 .btn-outline-success:not(:disabled):not(.disabled).active,
 .show>.btn-outline-success.dropdown-toggle {
   color: #fff;
-  background-color: #03cea4;
-  border-color: #03cea4
+  background-color: #19e6ff;
+  border-color: #19e6ff
 }
 
 .btn-outline-success:not(:disabled):not(.disabled):active:focus,
@@ -5423,7 +5423,7 @@ a.badge-secondary.focus {
 
 .badge-success {
   color: #fff;
-  background-color: #03cea4
+  background-color: #19e6ff
 }
 
 a.badge-success:hover,
@@ -7008,7 +7008,7 @@ button.bg-secondary:focus {
 }
 
 .bg-success {
-  background-color: #03cea4 !important
+  background-color: #19e6ff !important
 }
 
 a.bg-success:hover,
@@ -7130,7 +7130,7 @@ button.bg-dark:focus {
 }
 
 .border-success {
-  border-color: #03cea4 !important
+  border-color: #19e6ff !important
 }
 
 .border-info {
@@ -11445,7 +11445,7 @@ button.bg-dark:focus {
 }
 
 .text-success {
-  color: #03cea4 !important
+  color: #19e6ff !important
 }
 
 .text-info {
@@ -12631,11 +12631,11 @@ div.code-toolbar>.toolbar button:hover {
 
 .btn-translucent-success {
   background-color: rgba(3, 206, 164, 0.2);
-  color: #03cea4
+  color: #19e6ff
 }
 
 .btn-translucent-success:hover {
-  background-color: #03cea4
+  background-color: #19e6ff
 }
 
 .btn-translucent-info {

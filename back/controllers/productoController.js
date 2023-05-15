@@ -17,14 +17,20 @@ const registro_producto_admin = async function(req,res){
 
             data.slug = data.titulo.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
             data.portada = portada_name;
-            let reg = await Producto.create(data);
+            let reg = new Producto(data);
 
-            let inventario = await Inventario.create({
+            let inventario = new Inventario({
                 admin: req.user.sub,
                 cantidad: data.stock,
                 proveedor: 'Primer registro',
                 producto: reg._id
             });
+
+            console.log(inventario);
+
+            await reg.save();
+
+            await inventario.save();
 
             res.status(200).send({data:reg,inventario: inventario});
 

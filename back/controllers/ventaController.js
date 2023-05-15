@@ -112,7 +112,7 @@ const enviar_correo_compra_cliente = async function(req,res){
         service: 'gmail',
         host: 'smtp.gmail.com',
         auth: {
-        user: 'diegoalonssoac@gmail.com',
+        user: 'nicolasmosquera8B@gmail.com',
         pass: 'dcmplvjviofjojgf'
         }
     }));
@@ -137,7 +137,7 @@ const enviar_correo_compra_cliente = async function(req,res){
         var htmlToSend = template({op:true});
 
         var mailOptions = {
-            from: 'diegoalonssoac@gmail.com',
+            from: 'nicolasmosquera8B@gmail.com',
             to: venta.cliente.email,
             subject: 'Gracias por tu compra, Mi Tienda',
             html: htmlToSend

@@ -34,10 +34,10 @@
             </div>
             <div class="col-lg-4 form-group">
               <label for="">Categoría</label>
-              <select class="form-control custom-select" id="select-input" required name="categoria"
-                [(ngModel)]="producto.categoria">
+              <select class="form-control custom-select" id="select-input" required value="categorias" name="categorias"
+                [(ngModel)]="producto.categorias">
                 <option value="" selected disabled>Seleccionar</option>
-                <option value="{{item.titulo}}" *ngFor="let item of config_global.categorias">{{item.titulo}}</option>
+                <option *ngFor="let item of config_global.categorias" [value]="item.titulo" >{{item.titulo}}</option>
 
               </select>
             </div>
