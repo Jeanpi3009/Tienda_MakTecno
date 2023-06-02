@@ -29,7 +29,7 @@
     .pagination {
       margin-bottom: 0px;
     }
-
+    /* Fondo Carga */
     .cs-page-loading {
       position: fixed;
       top: 0;
@@ -40,7 +40,7 @@
       height: 100%;
       -webkit-transition: all .4s .2s ease-in-out;
       transition: all .4s .2s ease-in-out;
-      background-color: #7b7b7c;
+      background-color: #a48ffa;
       opacity: 0;
       visibility: hidden;
       z-index: 9999;
@@ -68,24 +68,27 @@
       opacity: 1;
     }
 
+    /* Diseño de Loading */
     .cs-page-loading-inner>span {
       display: block;
       font-size: 1rem;
       font-weight: normal;
-      color: #787a80;
+      color: #FFFF;
     }
 
+    
     .cs-page-spinner {
       display: inline-block;
-      width: 2.75rem;
-      height: 2.75rem;
+      width: 200px;
+      height: 200px;
       margin-bottom: .75rem;
       vertical-align: text-bottom;
-      background-color: #cfcfd1;
+      background-color: #ffffff;
       border-radius: 50%;
       opacity: 0;
-      -webkit-animation: spinner .75s linear infinite;
-      animation: spinner .75s linear infinite;
+      /* Bolita de carga */
+      -webkit-animation: spinner .50s linear infinite; 
+      animation: spinner .50s linear infinite; 
     }
 
     @-webkit-keyframes spinner {
@@ -182,7 +185,7 @@
 
   <div class="cs-page-loading active">
     <div class="cs-page-loading-inner">
-      <div class="cs-page-spinner"></div><span>Loading...</span>
+      <div><img src="assets/img/logo.png" class="cs-page-spinner"></div><span>Cargando...</span>
     </div>
   </div>
 

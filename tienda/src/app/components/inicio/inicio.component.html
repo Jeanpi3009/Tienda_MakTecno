@@ -4,22 +4,22 @@
     <section class="cs-carousel cs-controls-onhover">
         <div class="cs-carousel-inner" data-carousel-options=''>
     
-          <!-- Slide 1 -->
-          <div class="bg-size-cover py-xl-6" *ngIf="descuento_activo != undefined" style="background-image: url({{url}}obtener_banner_descuento/{{descuento_activo.banner}});">
+          <!-- Imagen De Notica 1 -->zu
+          <div class="bg-size-cover py-xl-6" style="background-image: url(../../assets/img/ecommerce/home/hero-slider/01.jpg);">
             <div class="container pt-5 pb-6">
               <div class="row pb-lg-6">
                 <div class="col-lg-6 offset-lg-1 offset-xl-0 pb-4 pb-md-6">
-                  <h3 class="font-size-lg text-uppercase cs-from-left cs-delay-1">Desde {{descuento_activo.fecha_inicio}} hasta {{descuento_activo.fecha_fin}}</h3>
-                  <h2 class="display-2 mb-lg-5 pb-3 cs-from-left">{{descuento_activo.titulo}}</h2>
-                  <div class="mb-4 cs-scale-up cs-delay-2">
-                    <a [routerLink]="['/productos']"  class="btn btn-outline-primary btn-lg">Ver productos</a>
+                  <h3 class="font-size-lg text-uppercase cs-from-top cs-delay-1">New Collection</h3>
+                  <h2 class="display-2 mb-lg-5 pb-3 cs-scale-down">Fall-Winter 2021</h2>
+                  <div class="mb-4 cs-scale-down cs-delay-2">
+                    <a href="shop-catalog.html" class="btn btn-outline-primary btn-lg">Shop the collection</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
     
-          <!-- Slide 2 -->
+          <!-- Imagen De Notica 2 -->
           <div class="bg-size-cover py-xl-6" style="background-image: url(../../assets/img/ecommerce/home/hero-slider/02.jpg);">
             <div class="container pt-5 pb-6">
               <div class="row pb-lg-6">
@@ -34,7 +34,7 @@
             </div>
           </div>
     
-          <!-- Slide 3 -->
+          <!-- Imagen De Notica 3 -->
           <div class="bg-size-cover py-xl-6" style="background-image: url(../../assets/img/ecommerce/home/hero-slider/03.jpg);">
             <div class="container pt-5 pb-6">
               <div class="row pb-lg-6">
@@ -49,7 +49,7 @@
             </div>
           </div>
     
-          <!-- Slide 4 -->
+          <!-- Imagen De Notica 4 -->
           <div class="bg-size-cover py-xl-6" style="background-image: url(../../assets/img/ecommerce/home/hero-slider/04.jpg);">
             <div class="container pt-5 pb-6">
               <div class="row pb-lg-6">
@@ -65,7 +65,7 @@
           </div>
         </div>
     
-        <!-- Pager -->
+        <!-- Botonoes -->
         <div class="container position-relative">
           <div class="row mt-lg-n5">
             <div class="col-lg-7 col-md-8 col-sm-10 offset-lg-1 offset-xl-0">
@@ -160,12 +160,12 @@
               </div>
             </div>
 
-         
+
           </div>
         </div>
     </section>
 
-     <!-- Trending products (carousel) -->
+    <!-- Trending products (carousel) -->
     <section class="py-5" style="background-color: #e5e8ed;">
         <div class="container my-lg-2 py-2 py-md-4">
           <div class="d-flex align-items-center justify-content-between pb-sm-1 mb-5">
@@ -244,35 +244,33 @@
                 <h3 class="h5 mb-3">{{item.titulo}}</h3>
               </a>
             </div>
-
-           
           </div>
         </div>
     </section>
 
     <!-- Mobile app CTA -->
     <section class="bg-dark">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-5">
-              <img src="../../assets/img/ecommerce/home/mobile-app-illustration.png" class="d-block mx-auto my-4 mb-lg-0 mt-lg-n4" width="498" alt="Illustartion">
-            </div>
-            <div class="col-md-7 col-lg-6 pt-3 pb-5 pt-md-5 pb-md-4 ml-auto">
-              <h2 class="text-light text-center text-md-left pb-3">¡Disfrute de las compras móviles con nuestra aplicación Createx Store!</h2>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-5">
+            <img src="../../assets/img/ecommerce/home/mobile-app-illustration.png" class="d-block mx-auto my-4 mb-lg-0 mt-lg-n4" width="498" alt="Illustartion">
+          </div>
+          <div class="col-md-7 col-lg-6 pt-3 pb-5 pt-md-5 pb-md-4 ml-auto">
+            <h2 class="text-light text-center text-md-left pb-3">¡Disfrute de las compras móviles con nuestra aplicación MakTecno Store!</h2>
               <div class="d-flex flex-wrap flex-sm-nowrap justify-content-center justify-content-md-start">
-                <a href="#" class="btn-market btn-apple mb-3 mx-2 ml-md-0 mr-md-3" role="button">
-                  <span class="btn-market-subtitle">Descarga en el</span>
-                  <span class="btn-market-title">App Store</span>
-                </a>
-                <a href="#" class="btn-market btn-google mb-3 mx-2 mx-md-0" role="button">
-                  <span class="btn-market-subtitle">Descarga en el</span>
-                  <span class="btn-market-title">Google Play</span>
-                </a>
-              </div>
+              <a href="#" class="btn-market btn-apple mb-3 mx-2 ml-md-0 mr-md-3" role="button">
+                <span class="btn-market-subtitle">Descarga en el</span>
+                <span class="btn-market-title">App Store</span>
+              </a>
+              <a href="#" class="btn-market btn-google mb-3 mx-2 mx-md-0" role="button">
+                <span class="btn-market-subtitle">Descarga en el</span>
+                <span class="btn-market-title">Google Play</span>
+              </a>
             </div>
           </div>
         </div>
-    </section>
+      </div>
+  </section>
 
     <!-- Services -->
     <section class="container pt-5 pb-2 pb-sm-5 py-md-5 py-lg-6">
@@ -304,17 +302,13 @@
     </section>
 
 
-    <!-- Insagram -->
+    <!-- Nosotros -->
     <section class="pt-5 pb-4 pt-lg-6 pb-lg-5 border-top border-bottom">
         <div class="container pt-md-4 pb-2 pt-lg-0 pb-lg-0">
           <div class="row">
             <div class="col-md-4 text-center text-md-left pb-2 pb-md-0 mb-4 mb-md-0">
-              <p class="text-dark text-uppercase mb-2">Siguenos en Instagram</p>
-              <h2 class="h1 pb-2 pb-md-3">@createx_store</h2>
-              <a href="#" class="btn btn-outline-primary btn-lg">
-                <i class="cxi-instagram font-size-lg mr-1"></i>
-                Siguenos en Instagram
-              </a>
+              <h2 class="h1 pb-2 pb-md-3">MakTecno</h2>
+              <p class="text-dark mb-2">Bienvenidos a nuestra tienda virtual, donde nos enorgullece brindar la mejor atención a nuestros usuarios y ofrecer productos de excelente calidad.</p>
             </div>
             <div class="col-md-8">
               <div class="cs-carousel cs-nav-outside">
@@ -324,14 +318,20 @@
                   <!-- Image -->
                   <div>
                     <img src="../../assets/img/ecommerce/home/instagram/01.jpg" alt="Image">
+                    <h4>Scrum Master</h4>
+                  <h5><em>Nicolás Mosquera Henao</em></h5>
                   </div>
                   <!-- Image -->
                   <div>
                     <img src="../../assets/img/ecommerce/home/instagram/02.jpg" alt="Image">
+                    <h4>Frontend</h4>
+                    <h5><em>Jean Pierre Loaiza Leon</em></h5>
                   </div>
                   <!-- Image -->
                   <div>
                     <img src="../../assets/img/ecommerce/home/instagram/03.jpg" alt="Image">
+                    <h4>Backend</h4>
+                    <h5><em>Jeison David Rubio Higuita</em></h5>
                   </div>
                 </div>
               </div>

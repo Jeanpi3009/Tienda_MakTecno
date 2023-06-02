@@ -1,376 +1,517 @@
 <app-nav></app-nav>
 
-<main  class="cs-page-wrapper">
-    <nav class="bg-secondary mb-3" aria-label="breadcrumb">
-        <div class="container">
-          <ol class="breadcrumb breadcrumb-alt mb-0">
-            <li class="breadcrumb-item">
-              <a [routerLink]="['/']"><i class="cxi-home"></i></a>
+<main class="cs-page-wrapper">
+  <nav class="bg-secondary mb-3" aria-label="breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb breadcrumb-alt mb-0">
+        <li class="breadcrumb-item">
+          <a [routerLink]="['/']"><i class="cxi-home"></i></a>
+        </li>
+
+        <li class="breadcrumb-item active" aria-current="page">Contacto</li>
+      </ol>
+    </div>
+  </nav>
+  <section class="container pt-3 pt-md-4">
+    <div class="row">
+
+      <!-- Nav tabs -->
+      <div class="col-md-4">
+        <div class="mb-md-5 mb-4 pb-lg-4" data-simplebar="" data-simplebar-auto-hide="false">
+          <ul class="nav flex-md-column flex-nowrap text-nowrap" role="tablist">
+            <li class="nav-item">
+              <a href="#stores" id="stores-tab" class="nav-link h3 mr-md-0 mr-sm-5 mr-4 mb-0 px-0" data-toggle="tab"
+                role="tab" aria-controls="stores" aria-selected="false">
+                Inicio
+              </a>
             </li>
-      
-            <li class="breadcrumb-item active" aria-current="page">Contacto</li>
-          </ol>
+            <li class="nav-item">
+              <a href="#contact" id="contact-tab" class="nav-link h3 mr-md-0 mr-sm-5 mr-4 mb-0 px-0 active"
+                data-toggle="tab" role="tab" aria-controls="contact" aria-selected="true">
+                Contacto
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#faq" id="faq-tab" class="nav-link h3 mr-md-0 mr-sm-5 mr-4 mb-0 px-0" data-toggle="tab"
+                role="tab" aria-controls="faq" aria-selected="false">
+                Preguntas más frecuentes
+              </a>
+            </li>
+          </ul>
         </div>
-    </nav>
+      </div>
 
-    <section class="container pt-3 pt-md-4">
-        <div class="row">
-    
-            <!-- Nav tabs -->
-            <div class="col-md-4">
-            <div class="mb-md-5 mb-4 pb-lg-4" data-simplebar="" data-simplebar-auto-hide="false">
-                <ul class="nav flex-md-column flex-nowrap text-nowrap" role="tablist">
-                <li class="nav-item">
-                    <a href="#contact" id="contact-tab" class="nav-link h3 mr-md-0 mr-sm-5 mr-4 mb-0 px-0 active" data-toggle="tab" role="tab" aria-controls="contact" aria-selected="true">
-                    Contacto
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#stores" id="stores-tab" class="nav-link h3 mr-md-0 mr-sm-5 mr-4 mb-0 px-0" data-toggle="tab" role="tab" aria-controls="stores" aria-selected="false">
-                    Nuestras tiendas
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#faq" id="faq-tab" class="nav-link h3 mr-md-0 mr-sm-5 mr-4 mb-0 px-0" data-toggle="tab" role="tab" aria-controls="faq" aria-selected="false">
-                    FAQ
-                    </a>
-                </li>
-                </ul>
+      <!-- Tabs content -->
+      <div class="col-md-8 ml-auto pt-md-2">
+        <div class="tab-content pb-2 pb-sm-4 pb-lg-5">
+
+          <!-- Tab: Contacto -->
+          <div id="contact" class="tab-pane pb-5 fade show active" role="tabpanel" aria-labelledby="contact-tab">
+            <p class="text-dark lead font-weight-bold">Si tiene alguna pregunta, inquietud o comentario, ¡nos encantaría
+              saber de usted! Envíe su consulta utilizando cualquiera de los siguientes métodos:</p>
+            <div class="nav-dark mb-5">
+              <a href="tel:4055550128" class="nav-link d-flex align-items-center font-weight-normal p-0 mb-2">
+                <i class="cxi-iphone text-primary lead mr-2"></i>
+                <span>+57 3122343039</span>
+              </a>
+              <a href="mailto:support@example.com"
+                class="nav-link d-flex align-items-center font-weight-normal p-0 mb-2">
+                <i class="cxi-mail text-primary lead mr-2"></i>
+                <span>maktecno05@gmail.com</span>
+              </a>
+              <a href="#" class="nav-link d-flex align-items-center font-weight-normal p-0 mb-2">
+                <i class="cxi-messenger text-primary lead mr-2"></i>
+                <span>Contactanos por Messenger</span>
+              </a>
+              <a href="#" class="nav-link d-flex align-items-center font-weight-normal p-0 mb-2">
+                <i class="cxi-twitter text-primary lead mr-2"></i>
+                <span>Nuestro Tweet</span>
+              </a>
             </div>
+            <p class="text-dark lead font-weight-bold pb-2">O póngase en contacto con nosotros completando el siguiente
+              formulario:</p>
+            <form #registroForm="ngForm" (ngSubmit)="registro(registroForm)">
+              <div class="row">
+                <div class="col-sm-6 form-group">
+                  <label for="cont-name">Nombres y apellidos *</label>
+                  <input type="text" id="cont-name" class="form-control form-control-lg" placeholder="Ej: Jeison Rubio"
+                    required="" name="cliente" [(ngModel)]="contacto.cliente">
+
+                </div>
+                <div class="col-sm-6 form-group">
+                  <label for="cont-email">Correo *</label>
+                  <input type="email" id="cont-email" class="form-control form-control-lg"
+                    placeholder="Ej: jeison@gmail.com" required="" name="correo" [(ngModel)]="contacto.correo">
+
+                </div>
+                <div class="col-sm-6 form-group">
+                  <label for="cont-phone">Telefono</label>
+                  <input type="text" id="cont-phone" class="form-control form-control-lg bg-0" required
+                    placeholder="000-000-0000" name="telefono" [(ngModel)]="contacto.telefono">
+                </div>
+                <div class="col-sm-6 form-group">
+                  <label for="cont-subject">Asunto</label>
+                  <input type="text" id="cont-subject" class="form-control form-control-lg bg-0" required
+                    placeholder="Asunto del mensaje" name="asunto" [(ngModel)]="contacto.asunto">
+                </div>
+                <div class="col-12 form-group">
+                  <label for="cont-message">Mensaje *</label>
+                  <textarea id="cont-message" class="form-control form-control-lg" rows="5"
+                    placeholder="Escribe tu consulta" required="" name="mensaje"
+                    [(ngModel)]="contacto.mensaje"></textarea>
+
+                </div>
+                <div class="col-lg-4 col-sm-5 pt-2">
+                  <button *ngIf="!load_btn" type="submit" class="btn btn-primary btn-lg btn-block">Enviar</button>
+                  <button *ngIf="load_btn" type="button" class="btn btn-primary">
+                    <span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>
+                    Enviando...
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Tab: Mision y vision -->
+          <div id="stores" class="tab-pane pb-3 fade" role="tabpanel" aria-labelledby="stores-tab">
+            <div class="row">
+              <div class="col-sm-6 mb-grid-gutter">
+                <div class="card card-hover">
+                  
+                  <div class="card-body">
+                    <h3 class="h4">Misión</h3>
+                    <ul class="mb-0 list-unstyled nav-dark">
+                     
+                      
+                      <li class="mb-2 pb-1">
+                        <div class="d-flex">
+                          <i class="text-primary"></i>
+                          Nuestra misión es ofrecer a nuestros clientes una experiencia de compra en línea excepcional, brindando productos de alta calidad, servicio al cliente sobresaliente y entregas rápidas y confiables. Buscamos ser el destino preferido para las compras en línea, proporcionando una amplia variedad de productos y soluciones que satisfagan las necesidades y deseos de nuestros clientes.
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 mb-grid-gutter">
+                <div class="card card-hover">
+                  <img class="card-img-top" src="../../assets/img/ecommerce/contacts/02.jpg" alt="Card image">
+                  <div class="card-body">
+                    <ul class="mb-0 list-unstyled nav-dark"></ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 mb-grid-gutter">
+                <div class="card card-hover">
+                  <img class="card-img-top" src="../../assets/img/ecommerce/contacts/03.jpg" alt="Card image">
+                  <div class="card-body">
+                    <ul class="mb-0 list-unstyled nav-dark"></ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 mb-grid-gutter">
+                <div class="card card-hover">
+                  <div class="card-body">
+                    <h3 class="h4">Visión</h3>
+                    <ul class="mb-0 list-unstyled nav-dark">
+                     
+                      <li class="mb-2 pb-1">
+                        <div class="d-flex">
+                          <i class="text-primary"></i>
+                          Nos esforzamos por ser el líder reconocido en el comercio electrónico, creando un impacto positivo en la vida de las personas al facilitarles la obtención de productos de manera conveniente y eficiente. Nuestra visión es transformar la forma en que las personas compran en línea, brindando una plataforma intuitiva, segura y confiable que mejore continuamente para satisfacer las demandas cambiantes del mercado. Buscamos ser una empresa innovadora y sostenible, que inspire confianza y lealtad en nuestros clientes.
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-    
-            <!-- Tabs content -->
-            <div class="col-md-8 ml-auto pt-md-2">
-            <div class="tab-content pb-2 pb-sm-4 pb-lg-5">
-    
-                <!-- Tab: Contact Us -->
-                <div id="contact" class="tab-pane pb-5 fade show active" role="tabpanel" aria-labelledby="contact-tab">
-                <p class="text-dark lead font-weight-bold">Si tiene alguna pregunta, inquietud o comentario, ¡nos encantaría saber de usted! Envíe su consulta utilizando cualquiera de los siguientes métodos:</p>
-                <div class="nav-dark mb-5">
-                    <a href="tel:4055550128" class="nav-link d-flex align-items-center font-weight-normal p-0 mb-2">
-                    <i class="cxi-iphone text-primary lead mr-2"></i>
-                    <span>(405) 555-0128</span>
+          </div>
+
+          <!-- Preguntas frecuentes-->
+          <div id="faq" class="tab-pane fade mt-n3 mt-dm-0 pb-5" role="tabpanel" aria-labelledby="faq-tab">
+            <div class="accordion-alt" id="accordion">
+              <!-- Card -->
+              <div class="card border-bottom">
+                <div class="card-header" id="headingFaq-1">
+                  <h5 class="accordion-heading">
+                    <a href="#faq-1" role="button" data-toggle="collapse" aria-expanded="true" aria-controls="faq-1">
+                      ¿Necesito registrarme para hacer un pedido?
+                      <span class="accordion-indicator"></span>
                     </a>
-                    <a href="mailto:support@example.com" class="nav-link d-flex align-items-center font-weight-normal p-0 mb-2">
-                    <i class="cxi-mail text-primary lead mr-2"></i>
-                    <span>support@example.com</span>
+                  </h5>
+                </div>
+                <div id="faq-1" class="collapse show" aria-labelledby="headingFaq-1" data-parent="#accordion">
+                  <div class="card-body text-muted">Sí, para realizar un pedido en nuestro sitio web es necesario
+                    registrarse.
+                    El registro te permitirá tener una cuenta personalizada donde podrás gestionar tus pedidos,
+                    guardar tus direcciones de envío y facturación, realizar un seguimiento de tus compras y recibir
+                    actualizaciones sobre ofertas especiales y promociones.
+                    Además, al tener una cuenta, podrás agilizar el proceso de compra en futuras ocasiones, ya que tus
+                    datos estarán guardados de forma segura.</div>
+                </div>
+              </div>
+              <!-- Card -->
+              <div class="card border-bottom">
+                <div class="card-header" id="headingFaq-2">
+                  <h5 class="accordion-heading">
+                    <a href="#faq-2" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+                      aria-controls="faq-2">¿Cuál es el plazo de entrega estimado?
+                      <span class="accordion-indicator"></span>
                     </a>
-                    <a href="#" class="nav-link d-flex align-items-center font-weight-normal p-0 mb-2">
-                    <i class="cxi-messenger text-primary lead mr-2"></i>
-                    <span>Contactanos por Messenger</span>
+                  </h5>
+                </div>
+                <div id="faq-2" class="collapse" aria-labelledby="headingFaq-2" data-parent="#accordion">
+                  <div class="card-body text-muted">
+                    El plazo de entrega estimado puede variar según varios factores,
+                    como la ubicación geográfica, el método de envío seleccionado y la disponibilidad del producto.
+                    En general, una vez que hayas realizado tu pedido, proporcionaremos una estimación del tiempo de
+                    entrega durante el proceso de pago.
+                    También es posible que brindemos opciones de envío más rápidas con costos adicionales si necesitas
+                    recibir tu pedido de forma urgente.
+                  </div>
+                  <div class="card-body text-muted">
+                    Es importante tener en cuenta que el plazo de entrega es una estimación y puede estar sujeto a
+                    retrasos imprevistos,
+                    como problemas de logística o condiciones climáticas adversas.
+                    Hacemos nuestro mejor esfuerzo para cumplir con los plazos de entrega estimados y mantener a
+                    nuestros clientes informados sobre cualquier posible retraso.
+                  </div>
+                  <div class="card-body text-muted">
+                    Si ya has realizado un pedido y deseas obtener información más precisa sobre el tiempo de entrega,
+                    te recomiendo que te comuniques con nuestro equipo de atención al cliente.
+                    Ellos podrán brindarte información actualizada sobre el estado de tu pedido y el plazo de entrega
+                    estimado.
+                  </div>
+                </div>
+              </div>
+              <!-- Card -->
+              <div class="card border-bottom">
+                <div class="card-header" id="headingFaq-3">
+                  <h5 class="accordion-heading">
+                    <a href="#faq-3" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+                      aria-controls="faq-3">¿Cómo puedo pagar mi pedido?
+                      <span class="accordion-indicator"></span>
                     </a>
-                    <a href="#" class="nav-link d-flex align-items-center font-weight-normal p-0 mb-2">
-                    <i class="cxi-twitter text-primary lead mr-2"></i>
-                    <span>Nuestro Tweet</span>
+                  </h5>
+                </div>
+                <div id="faq-3" class="collapse" aria-labelledby="headingFaq-3" data-parent="#accordion">
+                  <div class="card-body text-muted">
+                    Ofrecemos varias opciones de pago para facilitar tu experiencia de compra.
+                    Estas son algunas de las formas de pago disponibles en nuestro sitio web:
+                  </div>
+                  <div class="card-body text-muted">
+                    1. Tarjeta de crédito/débito: Aceptamos la mayoría de las principales tarjetas de crédito y débito,
+                    como Visa, Mastercard, American Express, entre otras. Durante el proceso de pago, se te solicitará
+                    ingresar los detalles de tu tarjeta de forma segura.
+                  </div>
+                  <div class="card-body text-muted">
+                    2. PayPal: Si prefieres utilizar PayPal como método de pago, también lo aceptamos.
+                    Al seleccionar esta opción, serás redirigido a la plataforma de PayPal para completar la transacción
+                    de forma segura.
+                  </div>
+                  <div class="card-body text-muted">
+                    3. Transferencia bancaria: En algunos casos, es posible que ofrezcamos la opción de pago por
+                    transferencia bancaria.
+                    Esta opción requiere que realices una transferencia desde tu cuenta bancaria a nuestra cuenta. Los
+                    detalles de la cuenta bancaria se proporcionarán durante el proceso de pago.
+                  </div>
+                  <div class="card-body text-muted">
+                    Es importante destacar que la disponibilidad de estas opciones de pago puede variar según la
+                    ubicación y otras circunstancias.
+                    Durante el proceso de pago en nuestro sitio web,
+                    se te mostrarán las opciones de pago disponibles específicas para tu región.
+                  </div>
+                  <div class="card-body text-muted">
+                    Si tienes alguna pregunta adicional sobre las opciones de pago o encuentras alguna dificultad
+                    durante el proceso,
+                    nuestro equipo de atención al cliente estará encantado de ayudarte.
+                  </div>
+                </div>
+              </div>
+              <!-- Card -->
+              <div class="card border-bottom">
+                <div class="card-header" id="headingFaq-4">
+                  <h5 class="accordion-heading">
+                    <a href="#faq-4" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+                      aria-controls="faq-4">¿Puedo obtener un reembolso si el precio ha cambiado desde que lo pedí?
+                      <span class="accordion-indicator"></span>
                     </a>
+                  </h5>
                 </div>
-                <p class="text-dark lead font-weight-bold pb-2">O póngase en contacto con nosotros completando el siguiente formulario.:</p>
-                    <form #registroForm="ngForm" (ngSubmit)="registro(registroForm)">
-                        <div class="row">
-                        <div class="col-sm-6 form-group">
-                            <label for="cont-name">Nombres y apellidos *</label>
-                            <input type="text" id="cont-name" class="form-control form-control-lg" placeholder="John Doe" required="" name="cliente" [(ngModel)]="contacto.cliente">
-                            
-                        </div>
-                        <div class="col-sm-6 form-group">
-                            <label for="cont-email">Correo *</label>
-                            <input type="email" id="cont-email" class="form-control form-control-lg" placeholder="johndoe@example.com" required="" name="correo" [(ngModel)]="contacto.correo">
-                            
-                        </div>
-                        <div class="col-sm-6 form-group">
-                            <label for="cont-phone">Telefono</label>
-                            <input type="text" id="cont-phone" class="form-control form-control-lg bg-0" required placeholder="00-000-0000" name="telefono" [(ngModel)]="contacto.telefono">
-                        </div>
-                        <div class="col-sm-6 form-group">
-                            <label for="cont-subject">Asunto</label>
-                            <input type="text" id="cont-subject" class="form-control form-control-lg bg-0" required placeholder="Asunto del mensaje" name="asunto" [(ngModel)]="contacto.asunto">
-                        </div>
-                        <div class="col-12 form-group">
-                            <label for="cont-message">Mensaje *</label>
-                            <textarea id="cont-message" class="form-control form-control-lg" rows="5" placeholder="Escribe tu consulta" required="" name="mensaje" [(ngModel)]="contacto.mensaje"></textarea>
-                            
-                        </div>
-                        <div class="col-lg-4 col-sm-5 pt-2">
-                            <button *ngIf="!load_btn" type="submit" class="btn btn-primary btn-lg btn-block">Enviar</button>
-                            <button *ngIf="load_btn" type="button" class="btn btn-primary">
-                                    <span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>
-                                Enviando...
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                <div id="faq-4" class="collapse" aria-labelledby="headingFaq-4" data-parent="#accordion">
+                  <div class="card-body text-muted">
+                    Entendemos que los precios pueden cambiar y que eso puede generar inquietud. Como administrador de
+                    este sitio web de comercio electrónico,
+                    te aseguro que nos esforzamos por brindar transparencia y satisfacción a nuestros clientes.
+                  </div>
+                  <div class="card-body text-muted">
+                    En relación a tu pregunta sobre un posible reembolso debido a cambios en el precio desde que
+                    realizaste tu pedido,
+                    generalmente aplicamos las siguientes políticas:
+                  </div>
+                  <div class="card-body text-muted">
+                    1. Precio fijo: Si el precio del producto que compraste no ha cambiado desde que realizaste tu
+                    pedido y pagaste por él,
+                    no habrá reembolso por la diferencia de precio.
+                  </div>
+                  <div class="card-body text-muted">
+                    2. Ofertas y promociones: Si el precio del producto ha disminuido debido a una oferta o promoción
+                    posterior a tu compra,
+                    normalmente no se otorgará un reembolso por la diferencia de precio. Sin embargo, siempre es
+                    recomendable revisar nuestras políticas específicas de devolución y reembolso,
+                    ya que en algunos casos especiales podrían aplicarse condiciones diferentes.
+                  </div>
+                  <div class="card-body text-muted">
+                    3. Cambios significativos de precio: En situaciones excepcionales en las que haya ocurrido un cambio
+                    significativo en el precio del producto que compraste,
+                    podemos evaluar la posibilidad de ofrecer un reembolso parcial o una compensación.
+                    Te recomendamos que te comuniques con nuestro equipo de atención al cliente para discutir tu
+                    situación específica.
+                  </div>
+                  <div class="card-body text-muted">
+                    Es importante tener en cuenta que las políticas de reembolso pueden variar según la empresa y las
+                    circunstancias individuales.
+                    Recuerda que siempre estamos aquí para ayudarte y resolver cualquier problema o inquietud que puedas
+                    tener.
+                  </div>
                 </div>
-    
-                <!-- Tab: Outlet Stores -->
-                <div id="stores" class="tab-pane pb-3 fade" role="tabpanel" aria-labelledby="stores-tab">
-                <div class="row">
-                    <div class="col-sm-6 mb-grid-gutter">
-                    <div class="card card-hover">
-                        <img class="card-img-top" src="../../assets/img/ecommerce/contacts/01.jpg" alt="Card image">
-                        <div class="card-body">
-                        <h3 class="h4">New York, USA</h3>
-                        <ul class="mb-0 list-unstyled nav-dark">
-                            <li class="mb-2 pb-1">
-                            <a class="d-flex nav-link font-weight-normal p-0" href="tel:4055550128">
-                                <i class="cxi-iphone mt-1 mr-2 pr-1 lead text-primary"></i>
-                                (405) 555-0128
-                            </a>
-                            </li>
-                            <li class="mb-2 pb-1">
-                            <a class="d-flex nav-link font-weight-normal p-0" href="mailto:newyork@example.com">
-                                <i class="cxi-mail mt-1 mr-2 pr-1 lead text-primary"></i>
-                                newyork@example.com
-                            </a>
-                            </li>
-                            <li class="mb-2 pb-1">
-                            <div class="d-flex">
-                                <i class="cxi-clock mt-1 mr-2 pr-1 lead text-primary"></i>
-                                Daily from 9am to 9pm
-                            </div>
-                            </li>
-                            <li class="mb-2 pb-1">
-                            <a class="d-flex nav-link font-weight-normal p-0" href="#">
-                                <i class="cxi-map-pin-outline mt-1 mr-2 pr-1 lead text-primary"></i>
-                                20 W 29th Street New York, NY 10001
-                            </a>
-                            </li>
-                        </ul>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="col-sm-6 mb-grid-gutter">
-                    <div class="card card-hover">
-                        <img class="card-img-top" src="../../assets/img/ecommerce/contacts/02.jpg" alt="Card image">
-                        <div class="card-body">
-                        <h3 class="h4">Delaware, USA</h3>
-                        <ul class="mb-0 list-unstyled nav-dark">
-                            <li class="mb-2 pb-1">
-                            <a class="d-flex nav-link font-weight-normal p-0" href="tel:8085550111">
-                                <i class="cxi-iphone mt-1 mr-2 pr-1 lead text-primary"></i>
-                                (808) 555-0111
-                            </a>
-                            </li>
-                            <li class="mb-2 pb-1">
-                            <a class="d-flex nav-link font-weight-normal p-0" href="mailto:delaware@example.com">
-                                <i class="cxi-mail mt-1 mr-2 pr-1 lead text-primary"></i>
-                                delaware@example.com
-                            </a>
-                            </li>
-                            <li class="mb-2 pb-1">
-                            <div class="d-flex">
-                                <i class="cxi-clock mt-1 mr-2 pr-1 lead text-primary"></i>
-                                Daily from 10am to 9pm
-                            </div>
-                            </li>
-                            <li class="mb-2 pb-1">
-                            <a class="d-flex nav-link font-weight-normal p-0" href="#">
-                                <i class="cxi-map-pin-outline mt-1 mr-2 pr-1 lead text-primary"></i>
-                                6391 Elgin St. Celina, Delaware 10299
-                            </a>
-                            </li>
-                        </ul>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="col-sm-6 mb-grid-gutter">
-                    <div class="card card-hover">
-                        <img class="card-img-top" src="../../assets/img/ecommerce/contacts/03.jpg" alt="Card image">
-                        <div class="card-body">
-                        <h3 class="h4">New Jersey, USA</h3>
-                        <ul class="mb-0 list-unstyled nav-dark">
-                            <li class="mb-2 pb-1">
-                            <a class="d-flex nav-link font-weight-normal p-0" href="tel:7025550122">
-                                <i class="cxi-iphone mt-1 mr-2 pr-1 lead text-primary"></i>
-                                (702) 555-0122
-                            </a>
-                            </li>
-                            <li class="mb-2 pb-1">
-                            <a class="d-flex nav-link font-weight-normal p-0" href="mailto:newjersey@example.com">
-                                <i class="cxi-mail mt-1 mr-2 pr-1 lead text-primary"></i>
-                                newjersey@example.com
-                            </a>
-                            </li>
-                            <li class="mb-2 pb-1">
-                            <div class="d-flex">
-                                <i class="cxi-clock mt-1 mr-2 pr-1 lead text-primary"></i>
-                                Daily from 9am to 8pm
-                            </div>
-                            </li>
-                            <li class="mb-2 pb-1">
-                            <a class="d-flex nav-link font-weight-normal p-0" href="#">
-                                <i class="cxi-map-pin-outline mt-1 mr-2 pr-1 lead text-primary"></i>
-                                2464 Royal Ln. Mesa, New Jersey 45463
-                            </a>
-                            </li>
-                        </ul>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="col-sm-6 mb-grid-gutter">
-                    <div class="card card-hover">
-                        <img class="card-img-top" src="../../assets/img/ecommerce/contacts/04.jpg" alt="Card image">
-                        <div class="card-body">
-                        <h3 class="h4">Maine, USA</h3>
-                        <ul class="mb-0 list-unstyled nav-dark">
-                            <li class="mb-2 pb-1">
-                            <a class="d-flex nav-link font-weight-normal p-0" href="tel:2195550114">
-                                <i class="cxi-iphone mt-1 mr-2 pr-1 lead text-primary"></i>
-                                (219) 555-0114
-                            </a>
-                            </li>
-                            <li class="mb-2 pb-1">
-                            <a class="d-flex nav-link font-weight-normal p-0" href="mailto:maine@example.com">
-                                <i class="cxi-mail mt-1 mr-2 pr-1 lead text-primary"></i>
-                                maine@example.com
-                            </a>
-                            </li>
-                            <li class="mb-2 pb-1">
-                            <div class="d-flex">
-                                <i class="cxi-clock mt-1 mr-2 pr-1 lead text-primary"></i>
-                                Daily from 9am to 8pm
-                            </div>
-                            </li>
-                            <li class="mb-2 pb-1">
-                            <a class="d-flex nav-link font-weight-normal p-0" href="#">
-                                <i class="cxi-map-pin-outline mt-1 mr-2 pr-1 lead text-primary"></i>
-                                8502 Preston Rd. Inglewood, Maine 98380
-                            </a>
-                            </li>
-                        </ul>
-                        </div>
-                    </div>
-                    </div>
+              </div>
+              <!-- Card -->
+              <div class="card border-bottom">
+                <div class="card-header" id="headingFaq-5">
+                  <h5 class="accordion-heading">
+                    <a href="#faq-5" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+                      aria-controls="faq-5">¿Me reembolsan los gastos de envío si devuelvo algo?
+                      <span class="accordion-indicator"></span>
+                    </a>
+                  </h5>
                 </div>
+                <div id="faq-5" class="collapse" aria-labelledby="headingFaq-5" data-parent="#accordion">
+                  <div class="card-body text-muted">
+                    En caso de devoluciones, los gastos de envío originales no suelen ser reembolsables. Sin embargo,
+                    hay excepciones en situaciones como defectos de fabricación o errores en el envío.
+                    Te recomendamos revisar nuestras políticas de devolución específicas para obtener información
+                    precisa sobre los reembolsos de gastos de envío.
+                    Si tienes alguna pregunta adicional, nuestro equipo de atención al cliente estará encantado de
+                    ayudarte.
+                  </div>
                 </div>
-    
-                <!-- Tab: FAQ -->
-                <div id="faq" class="tab-pane fade mt-n3 mt-dm-0 pb-5" role="tabpanel" aria-labelledby="faq-tab">
-                <div class="accordion-alt" id="accordion">
-                    <!-- Card -->
-                    <div class="card border-bottom">
-                    <div class="card-header" id="headingFaq-1">
-                        <h5 class="accordion-heading">
-                        <a href="#faq-1" role="button" data-toggle="collapse" aria-expanded="true" aria-controls="faq-1">Do I need to register to place an order?
-                            <span class="accordion-indicator"></span>
-                        </a>
-                        </h5>
-                    </div>
-                    <div id="faq-1" class="collapse show" aria-labelledby="headingFaq-1" data-parent="#accordion">
-                        <div class="card-body text-muted">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</div>
-                    </div>
-                    </div>
-                    <!-- Card -->
-                    <div class="card border-bottom">
-                    <div class="card-header" id="headingFaq-2">
-                        <h5 class="accordion-heading">
-                        <a href="#faq-2" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="faq-2">What is the estimated delivery time?
-                            <span class="accordion-indicator"></span>
-                        </a>
-                        </h5>
-                    </div>
-                    <div id="faq-2" class="collapse" aria-labelledby="headingFaq-2" data-parent="#accordion">
-                        <div class="card-body text-muted">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</div>
-                    </div>
-                    </div>
-                    <!-- Card -->
-                    <div class="card border-bottom">
-                    <div class="card-header" id="headingFaq-3">
-                        <h5 class="accordion-heading">
-                        <a href="#faq-3" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="faq-3">How can I pay for my order?
-                            <span class="accordion-indicator"></span>
-                        </a>
-                        </h5>
-                    </div>
-                    <div id="faq-3" class="collapse" aria-labelledby="headingFaq-3" data-parent="#accordion">
-                        <div class="card-body text-muted">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</div>
-                    </div>
-                    </div>
-                    <!-- Card -->
-                    <div class="card border-bottom">
-                    <div class="card-header" id="headingFaq-4">
-                        <h5 class="accordion-heading">
-                        <a href="#faq-4" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="faq-4">Can I get a refund if the price has changed since I ordered it?
-                            <span class="accordion-indicator"></span>
-                        </a>
-                        </h5>
-                    </div>
-                    <div id="faq-4" class="collapse" aria-labelledby="headingFaq-4" data-parent="#accordion">
-                        <div class="card-body text-muted">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</div>
-                    </div>
-                    </div>
-                    <!-- Card -->
-                    <div class="card border-bottom">
-                    <div class="card-header" id="headingFaq-5">
-                        <h5 class="accordion-heading">
-                        <a href="#faq-5" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="faq-5">Do you refund delivery charges if I return something?
-                            <span class="accordion-indicator"></span>
-                        </a>
-                        </h5>
-                    </div>
-                    <div id="faq-5" class="collapse" aria-labelledby="headingFaq-5" data-parent="#accordion">
-                        <div class="card-body text-muted">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</div>
-                    </div>
-                    </div>
-                    <!-- Card -->
-                    <div class="card border-bottom">
-                    <div class="card-header" id="headingFaq-6">
-                        <h5 class="accordion-heading">
-                        <a href="#faq-6" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="faq-6">What documents will be provided with the order?
-                            <span class="accordion-indicator"></span>
-                        </a>
-                        </h5>
-                    </div>
-                    <div id="faq-6" class="collapse" aria-labelledby="headingFaq-6" data-parent="#accordion">
-                        <div class="card-body text-muted">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</div>
-                    </div>
-                    </div>
-                    <!-- Card -->
-                    <div class="card border-bottom">
-                    <div class="card-header" id="headingFaq-7">
-                        <h5 class="accordion-heading">
-                        <a href="#faq-7" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="faq-7">Can I return the order to the courier if anything does not suit me?
-                            <span class="accordion-indicator"></span>
-                        </a>
-                        </h5>
-                    </div>
-                    <div id="faq-7" class="collapse" aria-labelledby="headingFaq-7" data-parent="#accordion">
-                        <div class="card-body text-muted">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</div>
-                    </div>
-                    </div>
-                    <!-- Card -->
-                    <div class="card border-bottom">
-                    <div class="card-header" id="headingFaq-8">
-                        <h5 class="accordion-heading">
-                        <a href="#faq-8" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="faq-8">What should I do if my order hasn't been delivered yet?
-                            <span class="accordion-indicator"></span>
-                        </a>
-                        </h5>
-                    </div>
-                    <div id="faq-8" class="collapse" aria-labelledby="headingFaq-8" data-parent="#accordion">
-                        <div class="card-body text-muted">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</div>
-                    </div>
-                    </div>
-                    <!-- Card -->
-                    <div class="card border-bottom">
-                    <div class="card-header" id="headingFaq-9">
-                        <h5 class="accordion-heading">
-                        <a href="#faq-9" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="faq-9">What is your Returns Policy?
-                            <span class="accordion-indicator"></span>
-                        </a>
-                        </h5>
-                    </div>
-                    <div id="faq-9" class="collapse" aria-labelledby="headingFaq-9" data-parent="#accordion">
-                        <div class="card-body text-muted">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</div>
-                    </div>
-                    </div>
+              </div>
+              <!-- Card -->
+              <div class="card border-bottom">
+                <div class="card-header" id="headingFaq-6">
+                  <h5 class="accordion-heading">
+                    <a href="#faq-6" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+                      aria-controls="faq-6">¿Qué documentos se entregarán con el pedido?
+                      <span class="accordion-indicator"></span>
+                    </a>
+                  </h5>
                 </div>
+                <div id="faq-6" class="collapse" aria-labelledby="headingFaq-6" data-parent="#accordion">
+                  <div class="card-body text-muted">
+                    Al realizar un pedido en nuestro sitio web de comercio electrónico,
+                    se proporcionarán los siguientes documentos:
+                  </div>
+                  <div class="card-body text-muted">
+                    1. Confirmación de pedido: Después de completar tu compra, recibirás una confirmación de pedido.
+                    Este documento contiene los detalles de tu compra, incluyendo los productos seleccionados,
+                    cantidades, precio, información de envío y facturación, a
+                    sí como los métodos de contacto.
+                  </div>
+                  <div class="card-body text-muted">
+                    2. Factura: Una vez que tu pedido haya sido procesado y enviado, se adjuntará una factura en el
+                    paquete o se enviará por correo electrónico por separado.
+                    La factura detalla el desglose completo de los productos adquiridos, precios unitarios, impuestos,
+                    gastos de envío y el importe total pagado.
+                  </div>
+                  <div class="card-body text-muted">
+                    3. Información de seguimiento: Si el envío de tu pedido cuenta con un servicio de seguimiento,
+                    recibirás un número de seguimiento y la información necesaria para rastrear el paquete durante su
+                    traslado.
+                    Esto te permitirá conocer la ubicación y el estado actual de tu envío.
+                  </div>
+                  <div class="card-body text-muted">
+                    Estos documentos te proporcionarán toda la información necesaria para realizar un seguimiento de tu
+                    pedido,
+                    verificar los productos recibidos y realizar cualquier reclamo o solicitud de servicio al cliente.
+                  </div>
+                  <div class="card-body text-muted">
+                    Si tienes alguna pregunta adicional sobre los documentos relacionados con tu pedido o necesitas
+                    asistencia adicional,
+                    no dudes en comunicarte con nuestro equipo de atención al cliente. Estaremos encantados de ayudarte
+                    en todo lo que podamos.
+                  </div>
                 </div>
+              </div>
+              <!-- Card -->
+              <div class="card border-bottom">
+                <div class="card-header" id="headingFaq-7">
+                  <h5 class="accordion-heading">
+                    <a href="#faq-7" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+                      aria-controls="faq-7">¿Puedo devolver el pedido al mensajero si algo no me gusta?
+                      <span class="accordion-indicator"></span>
+                    </a>
+                  </h5>
+                </div>
+                <div id="faq-7" class="collapse" aria-labelledby="headingFaq-7" data-parent="#accordion">
+                  <div class="card-body text-muted">Normalmente, el proceso de devolución de un pedido se realiza a
+                    través de nuestro servicio de atención al cliente en lugar de devolverlo directamente al mensajero.
+                    Te recomendamos seguir los pasos a continuación para devolver un producto que no cumpla con tus
+                    expectativas:</div>
+                  <div class="card-body text-muted">1. Comunícate con nuestro servicio de atención al cliente: Ponte en
+                    contacto con nuestro equipo de atención al cliente tan pronto como detectes que algo no te gusta o
+                    cumple con tus expectativas en el pedido. Ellos te guiarán en el proceso de devolución y te
+                    proporcionarán instrucciones específicas.</div>
+                  <div class="card-body text-muted">2. Sigue las indicaciones de devolución: Nuestro equipo de atención
+                    al
+                    cliente te informará sobre los pasos a seguir para devolver el producto. Es posible que se te
+                    solicite proporcionar detalles sobre el motivo de la devolución y algunas pruebas fotográficas, si
+                    es necesario.</div>
+                  <div class="card-body text-muted">3. Empaca el producto adecuadamente: Para la devolución, asegúrate
+                    de
+                    empacar el producto de manera segura y protegida en su embalaje original o en un embalaje adecuado.
+                    Asegúrate de incluir cualquier accesorio, etiqueta o documento relacionado.</div>
+                  <div class="card-body text-muted">4. Organiza la recogida o envío de devolución: Nuestro equipo de
+                    atención al cliente coordinará la recogida del producto a través de un servicio de mensajería o te
+                    indicará la dirección de envío de devolución. Sigue las instrucciones proporcionadas para garantizar
+                    una devolución exitosa.</div>
+                  <div class="card-body text-muted">Es importante destacar que es fundamental seguir el proceso de
+                    devolución establecido por nuestro equipo de atención al cliente para asegurarnos de que el producto
+                    sea devuelto correctamente y se realice el reembolso correspondiente.</div>
+                  <div class="card-body text-muted">Si tienes alguna duda adicional sobre el proceso de devolución, te
+                    recomendamos contactar a nuestro equipo de atención al cliente, quienes estarán encantados de
+                    ayudarte y brindarte orientación específica en tu caso particular.</div>
+                </div>
+              </div>
+              <!-- Card -->
+              <div class="card border-bottom">
+                <div class="card-header" id="headingFaq-8">
+                  <h5 class="accordion-heading">
+                    <a href="#faq-8" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+                      aria-controls="faq-8">¿Qué debo hacer si mi pedido aún no ha sido entregado?
+                      <span class="accordion-indicator"></span>
+                    </a>
+                  </h5>
+                </div>
+                <div id="faq-8" class="collapse" aria-labelledby="headingFaq-8" data-parent="#accordion">
+                  <div class="card-body text-muted">Si tu pedido aún no ha sido entregado dentro del plazo estimado, te
+                    sugerimos seguir estos pasos:</div>
+                  <div class="card-body text-muted">1. Verifica el estado de tu pedido: Inicia sesión en tu cuenta en
+                    nuestro sitio web y verifica el estado de tu pedido. Es posible que encuentres información
+                    actualizada sobre el proceso de envío y la fecha estimada de entrega.</div>
+                  <div class="card-body text-muted">2. Revisa la información de seguimiento: Si se proporcionó un número
+                    de
+                    seguimiento, utilízalo para rastrear tu paquete. Consulta el sitio web del servicio de mensajería
+                    correspondiente e ingresa el número de seguimiento para obtener información detallada sobre la
+                    ubicación y el estado actual de tu pedido.</div>
+                  <div class="card-body text-muted">3. Comunícate con nuestro equipo de atención al cliente: Si el plazo
+                    de
+                    entrega estimado ha pasado y no has recibido tu pedido ni tienes información actualizada sobre su
+                    estado, te recomendamos comunicarte con nuestro equipo de atención al cliente. Proporciona los
+                    detalles de tu pedido y explícales la situación. Ellos investigarán y te brindarán asistencia para
+                    resolver el problema.</div>
+                  <div class="card-body text-muted">4. Verifica la dirección de entrega: Asegúrate de que la dirección
+                    de
+                    entrega que proporcionaste sea correcta y esté completa. En algunos casos, los retrasos en la
+                    entrega pueden ocurrir debido a errores en la dirección o problemas de acceso al lugar de entrega.
+                    Si hay alguna discrepancia, informa a nuestro equipo de atención al cliente para que puedan tomar
+                    medidas adecuadas.</div>
+                  <div class="card-body text-muted">Nuestro objetivo es garantizar que recibas tu pedido de manera
+                    oportuna y satisfactoria. Siempre estamos aquí para ayudarte y resolver cualquier problema
+                    relacionado con la entrega de tu pedido. No dudes en comunicarte con nuestro equipo de atención al
+                    cliente, quienes trabajarán contigo para solucionar cualquier inconveniente.</div>
+                </div>
+              </div>
+              <!-- Card -->
+              <div class="card border-bottom">
+                <div class="card-header" id="headingFaq-9">
+                  <h5 class="accordion-heading">
+                    <a href="#faq-9" class="collapsed" role="button" data-toggle="collapse" aria-expanded="false"
+                      aria-controls="faq-9">¿Cuál es su política de devoluciones?
+                      <span class="accordion-indicator"></span>
+                    </a>
+                  </h5>
+                </div>
+                <div id="faq-9" class="collapse" aria-labelledby="headingFaq-9" data-parent="#accordion">
+                  <div class="card-body text-muted">
+                    Nuestra política de devoluciones está diseñada para garantizar tu satisfacción como cliente. A
+                    continuación, te proporcionaré un resumen de nuestras principales políticas de devoluciones, pero te
+                    recomendamos revisar los detalles completos en nuestro sitio web o comunicarte con nuestro equipo de
+                    atención al cliente para obtener información más precisa y específica.</div>
+                  <div class="card-body text-muted">1. Plazo de devolución: Aceptamos devoluciones dentro de un período
+                    determinado después de la entrega del producto. El plazo puede variar según el tipo de producto y
+                    las circunstancias. Te recomendamos revisar los plazos de devolución en la página correspondiente de
+                    nuestra tienda en línea.</div>
+                  <div class="card-body text-muted">2. Condiciones del producto: Para ser elegible para una devolución,
+                    el producto generalmente debe estar en su estado original, sin uso o daños significativos. Además,
+                    es posible que debas incluir todos los accesorios, etiquetas y empaques originales.</div>
+                  <div class="card-body text-muted">3. Proceso de devolución: Para iniciar una devolución, te sugerimos
+                    comunicarte con nuestro equipo de atención al cliente. Ellos te guiarán en el proceso y te
+                    proporcionarán las instrucciones necesarias. Puede requerirse que proporciones detalles sobre el
+                    motivo de la devolución y, en algunos casos, pruebas fotográficas del estado del producto.</div>
+                  <div class="card-body text-muted">3. Opciones de reembolso: Una vez que recibamos y verifiquemos el
+                    producto devuelto, procederemos con el reembolso. El método y el plazo de reembolso pueden variar
+                    según la forma de pago original utilizada. Es posible que se ofrezcan opciones de reembolso en forma
+                    de crédito en la tienda, reembolso en la forma de pago original o mediante otros acuerdos
+                    específicos.</div>
+                  <div class="card-body text-muted">Es importante tener en cuenta que algunas restricciones pueden
+                    aplicarse a ciertos productos, como productos personalizados, productos perecederos o productos
+                    íntimos. Además, te recomendamos revisar cualquier política adicional relacionada con garantías,
+                    cambios y excepciones que puedan aplicarse a productos específicos.</div>
+                  <div class="card-body text-muted">Nuestro objetivo es brindarte una experiencia de compra
+                    satisfactoria, y estamos aquí para ayudarte en caso de cualquier consulta o inquietud relacionada
+                    con las devoluciones.</div>
+                </div>
+              </div>
             </div>
-            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-  
+
 </main>
 
 
